@@ -29,7 +29,8 @@ def read_existing_data():
     conn.close()
     # Load Tuple to List
     existing_data = []
-    for result in results:
-        # result: ('00001', datetime.date(2018, 3, 2))
-        existing_data.append(result)
+    if results is not None:
+        for result in results:
+            # result: ('00001', datetime.date(2018, 3, 2))
+            existing_data.append(result)
     return existing_data
