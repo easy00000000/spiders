@@ -63,7 +63,9 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 # MYSQL Setting
-MYSQL_HOST = '172.17.0.3'
+#MYSQL_HOST = '172.17.0.3'
+MYSQL_HOST = 'rm-bp1jgnu4ky75e1r3v8o.mysql.rds.aliyuncs.com'
 MYSQL_USER = 'root'
-MYSQL_PASSWD = 'toor'
+#MYSQL_PASSWD = 'toor'
+MYSQL_PASSWD =  'Qwer1asdf'
 CCASS_DB = 'ccass_db'

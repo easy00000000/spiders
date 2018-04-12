@@ -5,11 +5,12 @@
 
 FROM python:3
 
-# USE vim and vi editor
-RUN alias vim=vim.tiny \
-    && vi=vim.tiny
-
 RUN apt-get update
+
+# USE vim and vi editor
+RUN apt-get install -y --no-install-recommends \
+        vim-tiny \
+    && alias vim=vim.tiny
 
 # PIP update
 RUN pip install --upgrade pip
@@ -39,7 +40,8 @@ RUN cd ~ \
 
 RUN apt-get install -y --no-install-recommends \
         libgtk-3-dev \
-        xvfb \
-    && rm -rf /var/lib/apt/lists/*         
+        xvfb
+
+RUN rm -rf /var/lib/apt/lists/*         
 
 CMD ["bash"]
