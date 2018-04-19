@@ -10,13 +10,6 @@ Test RDS MySQL
 import MySQLdb
 from crawl_worker.crawl_worker import settings
 
-# MySQL Settings
-# MYSQL_HOST = 'rm-bp1jgnu4ky75e1r3v8o.mysql.rds.aliyuncs.com'
-# MYSQL_USER = 'root'
-# MYSQL_PASSWD = 'Qwer1asdf'
-# DB = 'mysql'
-#CCASS_DB = 'ccass_db'
-#StockID_Index_Table = 'stockid_date_index'
 print('host is', settings.MYSQL_HOST)
 
 conn = MySQLdb.connect(host = settings.MYSQL_HOST,
@@ -28,6 +21,10 @@ conn = MySQLdb.connect(host = settings.MYSQL_HOST,
 
 cursor = conn.cursor()
 sql_command = 'show databases' #'SELECT StockID, Date FROM ' + StockID_Index_Table + ' GROUP BY StockID, Date'
+# create database ccass_db;
+# use ccass_db;
+# create table stockid_date_index (StockID VARCHAR(5), Date DATE);
+
 cursor.execute(sql_command)
 results = cursor.fetchall()
 conn.close()
