@@ -15,16 +15,17 @@ RUN apt-get install -y --no-install-recommends \
 # PIP update
 RUN pip install --upgrade pip
 
+# PIP some tools
+RUN pip install openpyxl
+RUN pip install bs4
+
 # ADD Python MySQLDB Lib
 RUN pip install mysqlclient
 
 # ADD Python Celery Lib
-RUN pip install celery \
-    && pip install pika
+RUN pip install celery
 
 # ADD Python Scrapy Lib
 RUN pip install scrapy
 
-RUN rm -rf /var/lib/apt/lists/*         
-
-CMD ["bash"]
+CMD ["bash", "load_celery.sh"]

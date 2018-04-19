@@ -24,12 +24,8 @@ def scrapy_ccass(d):
     p = os.getcwd()
     queue_folder = p+'/'+'queue'
     queue_file = datetime2filename(d=queue_folder)  
-    for t in d:        
-        msg_dict = json.loads(t)
-        print(str(msg_dict['stockid']), str(msg_dict['sdate']))
-        with open(queue_file, 'a') as outfile:  
-            json.dump(msg_dict, outfile)
-            outfile.write('\n')
+    with open(queue_file, 'a') as outfile:  
+        json.dump(d, outfile)
     
     # change working directory and run spider   
     spider_folder = p+'/'+'crawl_worker'
@@ -41,7 +37,7 @@ def scrapy_ccass(d):
     # return working directory
     os.chdir(p)
 
-def datetime2filename(d, l='txt'):
+def datetime2filename(d, l='json'):
     f = str(datetime.now())
     rs = [' ','.',':','-']
     for r in rs:
