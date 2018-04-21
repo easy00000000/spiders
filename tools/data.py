@@ -85,9 +85,10 @@ def get_formdata(execute_data):
         print(err)
         return None
 
-def read_existing_data(h,ur,pw,db,st):
+def read_existing_data(h,p,ur,pw,db,st):
      # Connect to MySQL
     conn = MySQLdb.connect(host = h,
+                           port = p,
                            user = ur, 
                            passwd = pw,
                            db = db,

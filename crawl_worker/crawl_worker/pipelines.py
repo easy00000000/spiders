@@ -45,9 +45,10 @@ class Json_Pipeline(object):
 class MYSQL_Pipeline(object):
     def open_spider(self, spider):
         self.conn = MySQLdb.connect(host = settings.get('MYSQL_HOST'),
-                                    db = settings.get('CCASS_DB'),
+                                    port = settings.get('MYSQL_PORT'),
                                     user = settings.get('MYSQL_USER'), 
                                     passwd = settings.get('MYSQL_PASSWD'),
+                                    db = settings.get('CCASS_DB'),
                                     charset = 'utf8',
                                     use_unicode = True
                                     )

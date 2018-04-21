@@ -24,6 +24,7 @@ def main(argv):
     existing_data = []
     existing_data = data.read_existing_data(
                             settings.MYSQL_HOST,
+                            settings.MYSQL_PORT,
                             settings.MYSQL_USER,
                             settings.MYSQL_PASSWD,
                             settings.CCASS_DB,

@@ -65,11 +65,13 @@ DOWNLOADER_MIDDLEWARES = {
 # MYSQL Setting
 # local 
 #MYSQL_HOST = '172.17.0.3' #docker container ip
+#MYSQL_PORT = 3306
 #MYSQL_USER = 'root'
 #MYSQL_PASSWD = 'toor'
 
 #Aliyun RDS
 #MYSQL_HOST = 'rm-bp1jgnu4ky75e1r3v8o.mysql.rds.aliyuncs.com'
+#MYSQL_PORT = 3306
 #MYSQL_USER = 'root'
 #MYSQL_PASSWD =  'Qwer1asdf'
 
