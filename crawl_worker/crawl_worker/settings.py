@@ -63,10 +63,21 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 # MYSQL Setting
-#MYSQL_HOST = '172.17.0.3'
-MYSQL_HOST = 'rm-bp1jgnu4ky75e1r3v8o.mysql.rds.aliyuncs.com'
-MYSQL_USER = 'root'
+# local 
+#MYSQL_HOST = '172.17.0.3' #docker container ip
+#MYSQL_USER = 'root'
 #MYSQL_PASSWD = 'toor'
-MYSQL_PASSWD =  'Qwer1asdf'
+
+#Aliyun RDS
+#MYSQL_HOST = 'rm-bp1jgnu4ky75e1r3v8o.mysql.rds.aliyuncs.com'
+#MYSQL_USER = 'root'
+#MYSQL_PASSWD =  'Qwer1asdf'
+
+#Tencent CDB
+MYSQL_HOST = 'gz-cdb-1ic3jobq.sql.tencentcdb.com'
+MYSQL_PORT = 62848
+MYSQL_USER = 'root'
+MYSQL_PASSWD = 'Qwer1asdf'
+
 CCASS_DB = 'ccass_db'
 StockID_Index_Table = 'stockid_date_index'
