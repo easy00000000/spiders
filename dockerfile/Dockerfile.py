@@ -24,6 +24,7 @@ RUN pip install mysqlclient
 
 # ADD Python Celery Lib
 RUN pip install celery
+RUN pip install flower
 
 # ADD Python Scrapy Lib
 RUN pip install scrapy

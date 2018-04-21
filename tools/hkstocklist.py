@@ -11,7 +11,7 @@ def parse_stocklist(stocklist_url = 'http://www.hkex.com.hk/eng/services/trading
                     stocklist_filename = 'ListOfSecurities.xlsx'):
     url = stocklist_url + stocklist_filename
     with urlopen(url) as response, open(stocklist_filename, 'wb') as out_file:
-        data = response.read() # a `bytes` object
+        data = response.read()
         out_file.write(data)
         
 def xlsx2json(xlsx_file = 'ListOfSecurities.xlsx',
