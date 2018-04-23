@@ -21,7 +21,7 @@ ROBOTSTXT_OBEY = False
 LOG_LEVEL = 'ERROR'
 
 # Delay to Crawl Pages
-DOWNLOAD_DELAY = 3.0
+DOWNLOAD_DELAY = 1.0
 
 # Stock List Text File
 STOCKLIST_FILE = '/home/work/crawl_worker/stocklist.txt'
