@@ -735,3 +735,40 @@ A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
 [Child 439, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
 [Child 399, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
 [GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1524477432441	geckodriver	INFO	geckodriver 0.19.1
+1524477432449	geckodriver	INFO	Listening on 127.0.0.1:37247
+1524477433621	mozrunner::runner	INFO	Running command: "/usr/local/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.Q3OpSrNlPdPL"
+*** You are running in headless mode.
+1524477434020	Marionette	INFO	Enabled via --marionette
+1524477435700	Marionette	INFO	Listening on port 38897
+1524477435736	Marionette	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 608, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 560, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 560, Chrome_ChildThread] WARNING: pipe error (30): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 560, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1524562503987	geckodriver	INFO	geckodriver 0.19.1
+1524562503995	geckodriver	INFO	Listening on 127.0.0.1:51021
+1524562505163	mozrunner::runner	INFO	Running command: "/usr/local/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.TH5FMubtQEnY"
+*** You are running in headless mode.
+1524562505576	Marionette	INFO	Enabled via --marionette
+1524562507289	Marionette	INFO	Listening on port 34415
+1524562507378	Marionette	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 729, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 679, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 679, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1524562572814	geckodriver	INFO	geckodriver 0.19.1
+1524562572824	geckodriver	INFO	Listening on 127.0.0.1:37197
+1524562573996	mozrunner::runner	INFO	Running command: "/usr/local/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.E5DsA6ocITbE"
+*** You are running in headless mode.
+1524562574426	Marionette	INFO	Enabled via --marionette
+1524562576127	Marionette	INFO	Listening on port 45127
+1524562576214	Marionette	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 841, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 793, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 793, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown

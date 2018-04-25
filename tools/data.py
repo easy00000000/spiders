@@ -103,9 +103,10 @@ def read_existing_data(h,p,ur,pw,db,st):
     # Load Tuple to List
     existing_data = []
     if results is not None:
-        for result in results:
+        for result in results:            
             # result: ('00001', datetime.date(2018, 3, 2))
             existing_data.append(result)
+        print('completed reading existing data')
     return existing_data
 
 def get_data_list(opts, existing_data):
@@ -222,6 +223,7 @@ def crawl_3(stockid, existing_data):
 def crawl_n1(slist, days, existing_data):
     execute_data = []
     for stockid in slist:
+        print('checking', stockid)
         ds = crawl_1(stockid, days, existing_data)
         for d in ds:
             execute_data.append(d)
