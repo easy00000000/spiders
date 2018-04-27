@@ -19,6 +19,7 @@ RUN pip install --upgrade pip
 # PIP some tools
 RUN pip install openpyxl
 RUN pip install bs4
+RUN pip install schedule
 
 # ADD Python MySQLDB Lib
 RUN pip install mysqlclient
@@ -55,4 +56,4 @@ RUN rm -rf /var/lib/apt/lists/* \
     && apt-get autoremove -y \
     && apt-get clean
 
-CMD ["bash"]
+CMD ["bash", "/home/work/spiders/load_schedule.sh"]

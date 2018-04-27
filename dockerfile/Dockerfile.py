@@ -19,6 +19,7 @@ RUN pip install --upgrade pip
 # PIP some tools
 RUN pip install openpyxl
 RUN pip install bs4
+RUN pip install schedule
 
 # ADD Python MySQLDB Lib
 RUN pip install mysqlclient

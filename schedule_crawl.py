@@ -26,4 +26,4 @@ schedule.every().day.at("22:01").do(job) #UTC+8->Shanghai Time if at 5am morning
 
 while True:
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(50)
