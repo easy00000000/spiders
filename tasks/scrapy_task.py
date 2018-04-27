@@ -13,11 +13,9 @@ from subprocess import call as execute
 from datetime import datetime
 import json
 import os
-from tasks import settings
 
-app = Celery(
-        backend=settings.BACKEND, 
-        broker=settings.BROKER_URL)
+app = Celery()
+app.config_from_object('tasks.celeryconfig')
     
 @app.task
 def scrapy_ccass(d):

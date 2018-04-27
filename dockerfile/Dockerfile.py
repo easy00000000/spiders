@@ -7,9 +7,10 @@ FROM python:3
 
 RUN apt-get update
 
-# USE vim and vi editor
+# USE vim and vi editor and Cron service
 RUN apt-get install -y --no-install-recommends \
         vim-tiny \
+        cron \ 
     && alias vim=vim.tiny
 
 # PIP update

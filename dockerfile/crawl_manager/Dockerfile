@@ -10,6 +10,7 @@ RUN apt-get update
 # USE vim and vi editor
 RUN apt-get install -y --no-install-recommends \
         vim-tiny \
+        cron \
     && alias vim=vim.tiny
 
 # PIP update

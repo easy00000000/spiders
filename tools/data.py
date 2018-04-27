@@ -193,9 +193,8 @@ def print_params(stockid, days, start_date, end_date):
     print('Start_Date', start_date)
     print('End_Date', end_date)
 
-def crawl_1(stockid, period, existing_data):
+def crawl_1(stockid, period, existing_data, n=1):
     execute_data = []
-    n = 1
     while (n < period):
         if is_sunday(n):
             pass
@@ -210,9 +209,11 @@ def crawl_1(stockid, period, existing_data):
     return execute_data
 
 def crawl_2(stockid, start_date, end_date, existing_data):
+    delta = date.today() - str2date(end_date)
+    n = delta.days + 0
     delta = str2date(end_date) - str2date(start_date)
-    period = delta.days + 1 + 1
-    execute_data = crawl_1(stockid, period, existing_data)          
+    period = delta.days + 1 + n
+    execute_data = crawl_1(stockid, period, existing_data, n=n)          
     return execute_data
 
 def crawl_3(stockid, existing_data):    
@@ -232,6 +233,7 @@ def crawl_n1(slist, days, existing_data):
 def crawl_n2(slist, start_date, end_date, existing_data):
     execute_data = []
     for stockid in slist:
+        print('checking', stockid)
         ds = crawl_2(stockid, start_date, end_date, existing_data)
         for d in ds:
             execute_data.append(d)
@@ -240,6 +242,7 @@ def crawl_n2(slist, start_date, end_date, existing_data):
 def crawl_n3(slist, existing_data):
     execute_data = []
     for stockid in slist:
+        print('checking', stockid)
         ds = crawl_3(stockid, existing_data)
         for d in ds:
             execute_data.append(d)
