@@ -21,7 +21,7 @@ from crawl_worker.items import BrokerInfoItem
 
 class CCASS_Spider(Spider):
     name = 'get_ccass'
-    allowed_domains = ['www.hkexnews.hk']       
+    allowed_domains = ['www.hkexnews.hk']    
     
     def start_requests(self):            
         ccass_url = 'http://www.hkexnews.hk/sdw/search/searchsdw.aspx'
@@ -55,7 +55,7 @@ class CCASS_Spider(Spider):
             br_item['broker_info'] = broker_info
             return br_item
         except:
-            self.logger.info('fail to parse data')
+            self.logger.error('fail to parse data')
 
     # -------------
     # Functions

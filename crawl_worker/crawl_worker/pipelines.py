@@ -7,6 +7,7 @@
 from scrapy.conf import settings
 import json
 import MySQLdb
+import sys
 
 class Json_Pipeline(object):
     def open_spider(self, spider):
@@ -56,7 +57,7 @@ class MYSQL_Pipeline(object):
 
     def close_spider(self, spider):
         self.conn.close()
-
+        
     def process_item(self, item, spider):
         # Create Table of StockID if not exists
         try:
@@ -71,7 +72,7 @@ class MYSQL_Pipeline(object):
             self.cursor.execute(mysql_command)
             self.conn.commit()
         except MySQLdb.Error as e:
-            print ('Error %d %s' % (e.args[0], e.args[1]))
+            print('Error %d %s' % (e.args[0], e.args[1]))
 
         # Check Item into Index
         mysql_command = "select * from stockid_date_index where StockID=%s and Date=%s"
@@ -92,9 +93,15 @@ class MYSQL_Pipeline(object):
                                         item['sdate'],
                                     ))
                 self.conn.commit()
-                print("[Scrapy] parse %s on the date %s" %(str(item['stockid']), str(item['sdate'])))
+                # redirect stdout
+                old_stdout = sys.stdout
+                with open("/home/scrapy.log","a") as log_file:
+                    sys.stdout = log_file
+                    print("[Scrapy] parse %s on the date %s" %(str(item['stockid']), str(item['sdate'])))
+                sys.sdtout = old_stdout
             except MySQLdb.Error as e:
-                print ('Error %d %s' % (e.args[0], e.args[1]))
+                #self.log.error('Error %d %s' % (e.args[0], e.args[1]))
+                print('Error %d %s' % (e.args[0], e.args[1]))
     
             # Add Items into StockID Table
             for tr in item['broker_info']:
@@ -127,5 +134,6 @@ class MYSQL_Pipeline(object):
                                         ))
                     self.conn.commit()
                 except MySQLdb.Error as e:
-                    print ('Error %d %s' % (e.args[0], e.args[1]))
+                    #self.log.error('Error %d %s' % (e.args[0], e.args[1]))
+                    print('Error %d %s' % (e.args[0], e.args[1]))
         return item

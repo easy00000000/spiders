@@ -19,6 +19,8 @@ ROBOTSTXT_OBEY = False
 
 # Set Log_Level: Defalut is DEBUG, Available Level include: CRITICAL, ERROR, WARNING, INFO, DEBUG
 LOG_LEVEL = 'ERROR'
+LOG_FILE = '/home/scrapy.log'
+
 
 # Delay to Crawl Pages
 DOWNLOAD_DELAY = 1.0
@@ -70,10 +72,12 @@ DOWNLOADER_MIDDLEWARES = {
 #MYSQL_PASSWD = 'toor'
 
 #Aliyun RDS
-#MYSQL_HOST = 'rm-bp1jgnu4ky75e1r3v8o.mysql.rds.aliyuncs.com'
-#MYSQL_PORT = 3306
-#MYSQL_USER = 'root'
-#MYSQL_PASSWD =  'Qwer1asdf'
+'''
+MYSQL_HOST = 'rm-bp1jgnu4ky75e1r3v8o.mysql.rds.aliyuncs.com'
+MYSQL_PORT = 3306
+MYSQL_USER = 'root'
+MYSQL_PASSWD =  'Qwer1asdf'
+'''
 
 #Tencent CDB
 MYSQL_HOST = 'gz-cdb-1ic3jobq.sql.tencentcdb.com'

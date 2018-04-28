@@ -29,7 +29,7 @@ def scrapy_ccass(d):
     spider_folder = p+'/'+'crawl_worker'
     os.chdir(spider_folder)
     spider_name = 'get_ccass'
-    execute_command = 'scrapy crawl ' + spider_name + ' -a queue_file=' + queue_file        
+    execute_command = 'scrapy crawl ' + spider_name + ' -a queue_file=' + queue_file     
     execute(execute_command.split())
     
     # return working directory
