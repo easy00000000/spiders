@@ -1,2 +1,2 @@
 cd /home/work/spiders
-celery --loglevel=info -A tasks.scrapy_task worker --max-tasks-per-child 1 -n pb_1@%h
+celery --loglevel=info --logfile=/home/celery.log -A tasks.scrapy_task worker --max-tasks-per-child 1 -n %h@O1 

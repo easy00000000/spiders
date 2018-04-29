@@ -1,2 +1,2 @@
 cd /home/work/spiders
-python schedule_crawl.py >> log_s.txt 2>&1
+python schedule_crawl.py >> /home/celery_schedule.log 2>&1
