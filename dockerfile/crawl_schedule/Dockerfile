@@ -56,4 +56,4 @@ RUN rm -rf /var/lib/apt/lists/* \
     && apt-get autoremove -y \
     && apt-get clean
 
-CMD ["bash"]
+CMD ["bash", "/home/work/spiders/load_schedule.sh"]
