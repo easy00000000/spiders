@@ -18,7 +18,7 @@ NEWSPIDER_MODULE = 'crawl_worker.spiders'
 ROBOTSTXT_OBEY = False
 
 # Set Log_Level: Defalut is DEBUG, Available Level include: CRITICAL, ERROR, WARNING, INFO, DEBUG
-LOG_LEVEL = 'ERROR'
+LOG_LEVEL = 'WARNING'
 LOG_FILE = '/home/scrapy.log'
 
 
