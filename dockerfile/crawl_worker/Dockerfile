@@ -28,4 +28,4 @@ RUN pip install celery
 # ADD Python Scrapy Lib
 RUN pip install scrapy
 
-CMD ["bash", "/home/work/spiders/dockerfile/crawl_worker/load_celery.sh"]
+CMD ["bash", "/home/work/spiders/load_celery.sh"]

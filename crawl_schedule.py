@@ -19,7 +19,7 @@ def job():
     
 #schedule.every(1).minutes.do(job)
 #schedule.every().hour.do(job)
-schedule.every().day.at("22:01").do(job) #UTC+8->Shanghai Time if at 5am morning of SH -> 22:01 at UTC
+schedule.every().day.at("21:01").do(job) #UTC+8->Shanghai Time if at 5am morning of SH -> 21:01 at UTC
 #schedule.every(5).to(10).days.do(job)
 #schedule.every().monday.do(job)
 #schedule.every().wednesday.at("5:00").do(job)
