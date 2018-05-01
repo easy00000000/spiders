@@ -195,7 +195,7 @@ def print_params(stockid, days, start_date, end_date):
 
 def crawl_1(stockid, period, existing_data, n=1):
     execute_data = []
-    while (n < period):
+    while (n <= period):
         if is_sunday(n):
             pass
         else:

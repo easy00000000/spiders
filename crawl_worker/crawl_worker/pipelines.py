@@ -94,7 +94,7 @@ class MYSQL_Pipeline(object):
                                         item['sdate'],
                                     ))
                 self.conn.commit()
-                logging.warning("[Scrapy] parse %s on the date %s" %(str(item['stockid']), str(item['sdate'])))
+                logging.critical("[Scrapy] parse %s on the date %s" %(str(item['stockid']), str(item['sdate'])))
                 #print("[Scrapy] parse %s on the date %s" %(str(item['stockid']), str(item['sdate'])))
             except MySQLdb.Error as e:
                 logging.error('Error %d %s' % (e.args[0], e.args[1]))

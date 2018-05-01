@@ -18,7 +18,7 @@ NEWSPIDER_MODULE = 'crawl_worker.spiders'
 ROBOTSTXT_OBEY = False
 
 # Set Log_Level: Defalut is DEBUG, Available Level include: CRITICAL, ERROR, WARNING, INFO, DEBUG
-LOG_LEVEL = 'WARNING'
+LOG_LEVEL = 'ERROR'
 LOG_FILE = '/home/scrapy.log'
 
 
@@ -66,10 +66,12 @@ DOWNLOADER_MIDDLEWARES = {
 
 # MYSQL Setting
 # local 
-#MYSQL_HOST = '172.17.0.3' #docker container ip
-#MYSQL_PORT = 3306
-#MYSQL_USER = 'root'
-#MYSQL_PASSWD = 'toor'
+'''
+MYSQL_HOST = '172.17.0.3' #docker container ip
+MYSQL_PORT = 3306
+MYSQL_USER = 'root'
+MYSQL_PASSWD = 'toor'
+'''
 
 #Aliyun RDS
 '''
