@@ -21,6 +21,10 @@ RUN pip install openpyxl
 RUN pip install bs4
 RUN pip install schedule
 
+# ADD Python Mongo Lib
+RUN pip install pymongo
+RUN pip install log4mongo
+
 # ADD Python MySQLDB Lib
 RUN pip install mysqlclient
 

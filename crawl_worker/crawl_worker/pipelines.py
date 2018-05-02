@@ -8,6 +8,7 @@ from scrapy.conf import settings
 import json
 import MySQLdb
 import logging
+from log4mongo.handlers import MongoHandler
 
 class Json_Pipeline(object):
     def open_spider(self, spider):
@@ -44,6 +45,11 @@ class Json_Pipeline(object):
         return item
 
 class MYSQL_Pipeline(object):
+    def __init__(self):
+        mongohost = settings.get('MONGO_HOST')
+        self.logger = logging.getLogger('MySQL_Pipeline')
+        self.logger.addHandler(MongoHandler(host=mongohost))
+        
     def open_spider(self, spider):
         self.conn = MySQLdb.connect(host = settings.get('MYSQL_HOST'),
                                     port = settings.get('MYSQL_PORT'),
@@ -72,7 +78,7 @@ class MYSQL_Pipeline(object):
             self.cursor.execute(mysql_command)
             self.conn.commit()
         except MySQLdb.Error as e:
-            logging.error('Error %d %s' % (e.args[0], e.args[1]))
+            self.logger.error('Error %d %s' % (e.args[0], e.args[1]))
             #print('Error %d %s' % (e.args[0], e.args[1]))
 
         # Check Item into Index
@@ -94,10 +100,10 @@ class MYSQL_Pipeline(object):
                                         item['sdate'],
                                     ))
                 self.conn.commit()
-                logging.critical("[Scrapy] parse %s on the date %s" %(str(item['stockid']), str(item['sdate'])))
+                self.logger.info("[Scrapy] parse %s on the date %s" %(str(item['stockid']), str(item['sdate'])))
                 #print("[Scrapy] parse %s on the date %s" %(str(item['stockid']), str(item['sdate'])))
             except MySQLdb.Error as e:
-                logging.error('Error %d %s' % (e.args[0], e.args[1]))
+                self.logger.error('Error %d %s' % (e.args[0], e.args[1]))
                 #print('Error %d %s' % (e.args[0], e.args[1]))
     
             # Add Items into StockID Table
@@ -131,6 +137,6 @@ class MYSQL_Pipeline(object):
                                         ))
                     self.conn.commit()
                 except MySQLdb.Error as e:
-                    logging.error('Error %d %s' % (e.args[0], e.args[1]))
+                    self.logger.error('Error %d %s' % (e.args[0], e.args[1]))
                     #print('Error %d %s' % (e.args[0], e.args[1]))
         return item

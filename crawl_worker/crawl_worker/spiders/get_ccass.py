@@ -21,9 +21,9 @@ from crawl_worker.items import BrokerInfoItem
 
 class CCASS_Spider(Spider):
     name = 'get_ccass'
-    allowed_domains = ['www.hkexnews.hk']    
-    
-    def start_requests(self):            
+    allowed_domains = ['www.hkexnews.hk']            
+        
+    def start_requests(self):     
         ccass_url = 'http://www.hkexnews.hk/sdw/search/searchsdw.aspx'
         queue_file = self.queue_file
         

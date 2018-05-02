@@ -18,8 +18,8 @@ NEWSPIDER_MODULE = 'crawl_worker.spiders'
 ROBOTSTXT_OBEY = False
 
 # Set Log_Level: Defalut is DEBUG, Available Level include: CRITICAL, ERROR, WARNING, INFO, DEBUG
-LOG_LEVEL = 'ERROR'
-LOG_FILE = '/home/scrapy.log'
+LOG_LEVEL = 'INFO'
+#LOG_FILE = '/home/scrapy.log'
 
 
 # Delay to Crawl Pages
@@ -82,10 +82,16 @@ MYSQL_PASSWD =  'Qwer1asdf'
 '''
 
 #Tencent CDB
+
 MYSQL_HOST = 'gz-cdb-1ic3jobq.sql.tencentcdb.com'
 MYSQL_PORT = 62848
 MYSQL_USER = 'root'
 MYSQL_PASSWD = 'Qwer1asdf'
 
+
 CCASS_DB = 'ccass_db'
 StockID_Index_Table = 'stockid_date_index'
+
+# MONGO Setting
+MONGO_HOST = '118.24.28.231'
+MONGO_PORT = 27017

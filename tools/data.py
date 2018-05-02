@@ -145,7 +145,7 @@ def get_data_list(opts, existing_data):
             
     elif len(stockid) == 0:
         slist = read_stocklist()
-        print(slist)
+        #print(slist)
         # from stocklist
         if days > 0:
             # crawl in period:
